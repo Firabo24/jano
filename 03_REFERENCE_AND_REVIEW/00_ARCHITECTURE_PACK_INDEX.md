@@ -1,38 +1,36 @@
-# Jano Health Architecture Pack Index — Updated
+# ARCHITECTURE_PACK_INDEX.md
 
-## Purpose
-Entry point for the full Jano Health architecture documentation system.
+## Canonical navigation
 
-## Canonical hierarchy
+Jano Health architecture is organized into an approved canonical baseline, active drafts, expanded draft categories, package controls/review records, and legacy material.
 
-```text
-Jano Health
-├── Healthcare OS
-├── Jano Core
-├── AI Platform
-├── Data Platform
-└── Interoperability
-```
+### Canonical baseline
 
-## Document classes
+The 20 files under `01_CANONICAL_BASELINE/` are the authoritative approved architecture. They are the reference point for all drafts.
 
-1. `01_CANONICAL_BASELINE` — approved authority.
-2. `02_CURRENT_ARCHITECTURE_DRAFTS` — current detailed drafts.
-3. `02_ENTERPRISE_ARCHITECTURE` through `20_STARTUP_AND_EXTERNAL_REFERENCE` — expanded category documents.
-4. `00_CONTROL` and `03_REFERENCE_AND_REVIEW` — control/reference artifacts.
-5. `99_LEGACY_NOT_CANONICAL` — historical material retained only for traceability.
+### Current drafts
 
-## Pack counts
+The 19 files under `02_CURRENT_ARCHITECTURE_DRAFTS/` extend the architecture and remain Draft.
 
-- 20 approved baselines
-- 19 current architecture drafts
-- 141 expanded category drafts
-- 12 control/reference documents
-- 2 legacy documents
-- 194 Markdown documents
-- 1 package file list
-- 195 archive entries
+### Expanded categories
 
-## Critical boundary reminders
+The remaining 141 active architecture artifacts are distributed across the dedicated category directories and remain Draft.
 
-Fayda is external. Anchor is outside Jano. AI is not clinical authority. Data Platform is downstream. Interoperability is an external boundary. Synchronization does not define clinical meaning.
+### Canonical principles
+
+- Clinical domains own clinical meaning and authoritative state.
+- Jano Core is narrow and foundational.
+- Identity is distinct from authentication, authorization, consent, and clinical responsibility.
+- EMPI operates inside the Jano Core identity boundary.
+- Fayda is external.
+- Encounter is the approved primary aggregate baseline.
+- Assessment is the approved secondary aggregate baseline within Encounter.
+- AI is supporting intelligence, not clinical authority.
+- CDS is broader than AI.
+- Data Platform is downstream of clinical truth.
+- Interoperability owns external boundaries and translation.
+- Domain events retain domain ownership of meaning.
+- Event infrastructure is infrastructure only.
+- Offline local state is not automatically globally reconciled state.
+- Logical boundaries precede deployment boundaries.
+- Microservices and cloud providers are not mandatory architectural commitments.

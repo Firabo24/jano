@@ -1,26 +1,42 @@
-# Pack Completeness Summary — Updated
+# PACK_COMPLETENESS_SUMMARY.md
 
-## Package composition
+**Package:** Jano Health Complete Architecture and Documentation Pack
+**Release:** 2026-09-30 UPDATED
 
-The updated pack contains:
+## Inventory
 
-- **20** approved canonical architecture documents;
-- **19** current architecture drafts;
-- **141** expanded category drafts;
-- **12** control/reference documents;
-- **2** legacy / not-canonical documents;
-- **194 Markdown documents**;
-- **1 package file list**;
-- **195 archive entries**.
+- Markdown documents: **194**
+- `PACK_FILE_LIST.txt`: **1**
+- Total archive entries: **195**
+- Approved canonical baselines: **20**
+- Current architecture drafts: **19**
+- Expanded category drafts: **141**
+- Control / review Markdown: **12**
+- Legacy / not-canonical Markdown: **2**
 
-## Canonical baseline correction
+## Required canonical structure
 
-The previously approved `AUDIT_ARCHITECTURE.md` has been restored under `01_CANONICAL_BASELINE`. The prior `AUDIT_ACCOUNTABILITY_ARCHITECTURE.md` remains in the draft area and explicitly defers to the canonical baseline.
+```text
+01_CANONICAL_BASELINE/             20
+02_CURRENT_ARCHITECTURE_DRAFTS/    19
+expanded category directories    141
+```
 
-## Register correction
+## Verification Results
 
-The master register and review matrices are generated from the actual archive inventory. Historical names that are not present in the package are not counted as current artifacts.
+- ZIP inventory checked from package filesystem: PASS
+- Exactly 20 canonical documents: PASS
+- Exactly 19 current drafts: PASS
+- Exactly 141 expanded category drafts: PASS
+- Exactly 194 Markdown documents: PASS
+- Exactly 1 package file list: PASS
+- Exactly 195 archive entries: PASS
+- Canonical status headers normalized: PASS
+- EMPI contradictory Draft footer removed: PASS
+- Audit canonical file present: PASS
+- Draft Audit Accountability file retained separately: PASS
+- Control/register content generated from actual inventory: PASS
 
-## Approval boundary
+## Verification limitation
 
-Only the 20 files in `01_CANONICAL_BASELINE` are treated as approved architectural authority. The remaining active architecture documents remain drafts until independently reviewed.
+The requested GitHub repository was also designated as a source. The repository could not be fetched from this execution environment, so this release does not claim live-repository byte-for-byte equivalence. The architecture package itself was verified locally against the requested inventory and project decisions.

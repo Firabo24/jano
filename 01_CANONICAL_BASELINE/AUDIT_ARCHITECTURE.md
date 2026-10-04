@@ -1,6 +1,6 @@
 # AUDIT_ARCHITECTURE.md
 
-**Version:** v0.1.0  
+**Version:** v0.1.0
 **Status:** Approved Architectural Baseline  
 **Document Owner:** Jano Health Architecture  
 **Parent Architecture:** Jano Core
@@ -119,3 +119,70 @@ This baseline does not authorize unlimited audit capture. The set of auditable a
 | Version | Change | Status |
 |---|---|---|
 | v0.1.0 | Canonical audit/accountability baseline restored to the pack. | Approved Architectural Baseline |
+## 4. Audit Ownership
+
+Jano Core owns the foundational meaning of audit/accountability. The business domain that owns the underlying state remains responsible for the business meaning of the action or state change.
+
+## 5. Audit Record Semantics
+
+A meaningful audit representation can identify, as applicable:
+
+- actor;
+- subject/resource;
+- action/operation;
+- contextual scope;
+- time;
+- outcome;
+- governance context;
+- accountability relationship;
+- relevant provenance needed to understand who acted and under what context.
+
+## 6. Audit vs Technical Logging
+
+Audit is not a copy of every log message. Technical logs, metrics, traces, and diagnostics may exist for operations without each becoming an audit record.
+
+## 7. Material Consequence
+
+Identity changes, clinically consequential actions, governance-relevant operations, authorization changes, and other materially significant operations may generate audit representations where required.
+
+## 8. Actor Provenance
+
+The original actor and relevant accountability context must remain attributable. A synchronization actor or transport process does not become the original clinical actor merely because it later propagates the record.
+
+## 9. Offline Accountability
+
+```text
+Local Accountability
+        ≠
+Globally Reconciled Accountability
+```
+
+Offline audit representations preserve local provenance until governed reconciliation establishes their broader system state.
+
+## 10. Audit Sensitivity
+
+Audit information may itself be sensitive and must therefore be governed by appropriate identity, authorization, privacy, trust, and access-control boundaries.
+
+## 11. Audit and Domain Events
+
+```text
+Domain Event ≠ Audit Record
+```
+
+A domain event states that domain-owned authoritative state changed. An audit record explains a consequential accountability representation. One operation may legitimately produce both.
+
+## 12. Correction
+
+Audit history is not silently rewritten to erase the existence of a prior action. Corrections or amendments to business state may themselves create subsequent accountability representations.
+
+## 13. Relationship to Identity/Authz/Consent
+
+Audit records can reference identity, authorization, consent, and trust context, but they do not own those concepts or replace them.
+
+## 14. Implementation Deferral
+
+Detailed storage, retention, SIEM integration, immutable storage technology, encryption implementation, search/index design, and operational retention schedules remain deferred to dedicated architecture and governance documents.
+
+## 15. Canonical Status
+
+**Approved Architectural Baseline — v0.1.0**

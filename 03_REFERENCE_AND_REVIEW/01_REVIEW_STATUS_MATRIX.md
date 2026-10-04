@@ -1,47 +1,23 @@
-# Review Status Matrix — Updated
+# REVIEW_STATUS_MATRIX.md
 
-## Status summary
-
-| Class | Count | Status meaning |
+| Classification | Count | Review Status |
 |---|---:|---|
-| Approved canonical baseline | 20 | Architectural authority |
-| Current architecture drafts | 19 | Not approved |
-| Expanded category drafts | 141 | Not approved |
-| Control/reference | 12 | Administrative or factual reference |
-| Legacy/not canonical | 2 | Non-authoritative history |
+| Approved Architectural Baseline | 20 | Approved |
+| Current Architecture Drafts | 19 | Pending individual review |
+| Expanded Category Drafts | 141 | Pending individual review |
+| Control / Review | 12 | Package control |
+| Legacy / Not Canonical | 2 | Historical only |
 
 ## Approved baseline
 
-The 20 approved baselines are:
-
-- `JANO_HEALTH_ARCHITECTURE.md`
-- `HEALTHCARE_OS_ARCHITECTURE.md`
-- `CLINICAL_DDD_ARCHITECTURE.md`
-- `CLINICAL_DOMAIN_ARCHITECTURE.md`
-- `ENCOUNTER_DOMAIN_ARCHITECTURE.md`
-- `ENCOUNTER_AGGREGATE_ARCHITECTURE.md`
-- `ENCOUNTER_STATE_MODEL.md`
-- `ENCOUNTER_COMMAND_ARCHITECTURE.md`
-- `ENCOUNTER_DOMAIN_EVENT_ARCHITECTURE.md`
-- `ENCOUNTER_AGGREGATE_FINALIZATION.md`
-- `ASSESSMENT_AGGREGATE_ARCHITECTURE.md`
-- `JANO_CORE_ARCHITECTURE.md`
-- `IDENTITY_ARCHITECTURE.md`
-- `PATIENT_IDENTITY_ARCHITECTURE.md`
-- `EMPI_ARCHITECTURE.md`
-- `CONSENT_ARCHITECTURE.md`
-- `AUTHORIZATION_FOUNDATIONS_ARCHITECTURE.md`
-- `TRUST_ARCHITECTURE.md`
-- `DOMAIN_EVENT_INFRASTRUCTURE.md`
-- `AUDIT_ARCHITECTURE.md`
+All 20 canonical files are marked `Approved Architectural Baseline` in-document and in the register.
 
 ## Draft rule
 
-All other active architecture documents remain Draft for Architectural Review until individually reviewed. No promotion is implied by the completeness of this pack.
+No draft is promoted automatically because it is complete, internally consistent, or operationally detailed. Promotion requires explicit independent architectural review.
 
-## Current review priorities
+## Specific gates
 
-1. Reconcile the current draft layers with approved boundaries.
-2. Review domain candidate boundaries before promoting them.
-3. Validate runtime, offline/sync, AI safety, security and interoperability documents using scenario evidence.
-4. Maintain explicit ownership and maturity for every candidate.
+- `AUDIT_ACCOUNTABILITY_ARCHITECTURE.md` remains Draft and does not supersede `AUDIT_ARCHITECTURE.md`.
+- EMPI remains Approved Architectural Baseline v0.1.3 with no contradictory Draft status.
+- Future bounded contexts remain classified by maturity rather than assumed as approved.

@@ -1,32 +1,28 @@
-# Current Architectural Decisions — Master
+# CURRENT_ARCHITECTURAL_DECISIONS.md
 
-These decisions are the current cross-document constraints reflected in the package.
+## Approved decisions carried forward
 
 1. Jano Health is healthcare infrastructure.
-2. Canonical top-level model: Healthcare OS, Jano Core, AI Platform, Data Platform, Interoperability.
+2. Healthcare OS is the clinical umbrella.
 3. Jano Core is narrow and foundational.
-4. Person Identity is internally authoritative within Jano Core.
-5. EMPI operates within the Jano Core Identity Consistency Boundary and is not a second identity authority.
-6. Fayda is external; it is represented as an external identity relationship.
-7. Anchor is completely outside Jano Health.
-8. Identity, authentication, authorization, consent and clinical responsibility are distinct.
-9. Encounter is the approved primary aggregate of the Encounter bounded context.
-10. Assessment is the approved secondary aggregate baseline within Encounter BC.
-11. Clinical Conclusion and Treatment remain candidates requiring evidence.
-12. Completion is distinct from closure.
-13. Domain events express domain-owned facts; Event Infrastructure is infrastructure only.
-14. AI is supporting intelligence and does not own clinical authority.
-15. CDS is broader than AI.
-16. Data Platform is downstream and does not own all clinical truth.
-17. Interoperability translates at external boundaries and does not own internal clinical meaning.
-18. Offline local acceptance is not global reconciliation.
-19. Synchronization infrastructure does not decide clinical meaning.
-20. Cross-domain direct aggregate mutation is prohibited.
-21. Microservices are optional; logical modularity precedes service extraction.
-22. No cloud provider is a hard architectural dependency.
-23. Exact database/API/FHIR/HL7 implementation details are deferred to dedicated documents.
-24. Security, privacy, clinical safety, auditability and offline continuity are cross-cutting.
+4. Identity authority remains internal to Jano Core.
+5. EMPI remains a capability inside the identity boundary.
+6. Fayda is external.
+7. Encounter remains the approved bounded context / primary aggregate baseline for its lifecycle.
+8. Assessment remains the approved secondary aggregate baseline within Encounter.
+9. Clinical Conclusion and Treatment remain maturity-limited candidates where not independently established.
+10. Cross-aggregate direct mutation is prohibited.
+11. Domain-event meaning belongs to the owning aggregate/bounded context.
+12. Event infrastructure is infrastructure only.
+13. Audit records are distinct from domain events.
+14. Offline local state is distinct from globally reconciled state.
+15. AI remains supporting intelligence, not clinical authority.
+16. Data Platform remains downstream of domain-owned clinical truth.
+17. Interoperability owns external boundary concerns, not internal clinical meaning.
+18. Microservices are optional.
+19. No cloud provider is mandatory.
+20. Security, privacy, clinical safety, auditability, trust, and offline-first are cross-cutting.
 
-## Review note
+## Maturity rule
 
-This copy is the review-facing summary; the control master and approved baseline remain the governing references.
+Approved decisions are authoritative. Drafts may elaborate them but cannot silently override them. A change to an approved decision requires explicit architectural review and versioned change control.

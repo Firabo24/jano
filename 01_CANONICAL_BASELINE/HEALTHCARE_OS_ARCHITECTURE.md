@@ -64,4 +64,105 @@ Future capabilities such as laboratory, radiology, pharmacy, emergency, public h
 - do not turn every workflow stage into a domain;
 - do not turn every capability into a bounded context;
 - do not turn every bounded context into a microservice;
-- preserve Anchor separation and Fayda externality.
+- preserve external-system separation and Fayda externality.
+## 7. Clinical Capability Landscape
+
+The initial landscape contains capabilities and workflow stages that must not be confused with bounded contexts.
+
+| Concept | Current architectural reading |
+|---|---|
+| Registration | Clinical/administrative capability; identity boundary interaction |
+| Identity / EMPI | Foundational platform interaction; not clinical state |
+| Triage | Clinical workflow capability; current MVP result remains Encounter-owned |
+| Encounter | Approved bounded context and primary aggregate boundary |
+| Assessment | Approved secondary aggregate baseline within Encounter context |
+| Diagnosis / clinical conclusion | Candidate classification requiring continued evidence where separately modeled |
+| Treatment | Candidate classification requiring evidence; medication-specific lifecycle remains separate |
+| Medication | Clinical domain/capability with its own lifecycle outside Encounter |
+| Referral | Care-coordination domain/capability with its own lifecycle |
+| Follow-up | Continuity capability/workflow; final boundary remains open |
+
+## 8. Clinical Domains vs Programs vs Specialties
+
+A chronic-disease program, maternal-health program, specialty service, or public-health initiative does not automatically constitute a bounded context. The deciding factors remain semantic ownership, authoritative state, invariants, lifecycle, correction behavior, concurrency, and offline behavior.
+
+## 9. Workflow Architecture
+
+Healthcare OS defines cross-domain workflow architecture.
+
+```text
+Healthcare OS
+      ↓
+Clinical Workflow Architecture
+      ↓
+Multiple Domain Activities
+      ↓
+Domain-Owned Commands / State Changes
+      ↓
+Domain Events
+```
+
+There is no universal clinical workflow engine implied here.
+
+## 10. Clinical Ownership
+
+Each clinical domain owns the meaning and authoritative state for the concepts within its boundary. Healthcare OS owns the umbrella clinical architecture and workflow relationships, not every clinical record or transition.
+
+## 11. Encounter Boundary
+
+Encounter is an individual clinical interaction. It is not a universal episode, longitudinal patient aggregate, or substitute for referral, medication, or long-term condition state.
+
+## 12. Assessment Boundary
+
+Assessment is a secondary aggregate within the Encounter bounded context because its lifecycle, findings, attribution, clinical meaning, and correction/amendment integrity form a separately analyzable consistency boundary. The aggregate's separate status remains governed by its approved baseline.
+
+## 13. Diagnosis and Treatment Maturity
+
+Clinical Conclusion and Treatment remain candidates where the evidence has not been independently finalized. Their concepts must not be separated merely for symmetry, because of safety sensitivity alone, or because they are convenient domain nouns.
+
+## 14. Longitudinal State
+
+Longitudinal conditions, care plans, ongoing treatment, follow-up, and disease progression are not automatically Encounter-owned. Their final ownership requires explicit DDD analysis.
+
+## 15. Cross-Cutting Concerns
+
+Security, privacy, identity, consent, authorization, trust, auditability, offline-first operation, synchronization, and AI assistance cross the clinical architecture without becoming the clinical owner of all state.
+
+## 16. Clinical Safety
+
+Safety requirements belong to the relevant clinical workflow and domain. AI can support CDS but cannot become the clinical authority.
+
+## 17. Offline Clinical Operation
+
+Clinical domains must preserve safe local continuity where designed for offline use. Local acceptance is not equivalent to global reconciliation.
+
+## 18. Interoperability Relationship
+
+External laboratory, radiology, pharmacy, and other systems connect through the Interoperability boundary. External representations are not allowed to replace internal clinical meaning.
+
+## 19. Future Domain Assessment Test
+
+Before promoting a capability to a bounded context, evaluate:
+
+- distinct clinical meaning;
+- clear owner;
+- authoritative state;
+- lifecycle;
+- invariants;
+- correction/amendment;
+- concurrency;
+- offline behavior;
+- domain event needs;
+- coordination cost.
+
+## 20. Quality Gate
+
+A clinical architecture document is not approved merely because a capability exists in the product. Architecture approval requires explicit review of the boundary and its evidence.
+
+## 21. Relationship to DDD
+
+Healthcare OS is the umbrella from which dedicated DDD analysis proceeds. The approved Clinical DDD architecture governs the method of deciding bounded contexts and aggregates.
+
+## 22. Canonical Status
+
+**Approved Architectural Baseline — v0.1.1**

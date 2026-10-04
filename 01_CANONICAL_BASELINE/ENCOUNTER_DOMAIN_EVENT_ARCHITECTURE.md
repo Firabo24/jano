@@ -45,3 +45,45 @@ Receiving Aggregate
 ## 6. Offline
 
 Local event creation does not automatically mean global reconciliation. Duplicate delivery does not imply duplicate clinical occurrence.
+## 7. Event Meaning
+
+An Encounter Domain Event is an immutable semantic fact that an authoritative Encounter state change occurred.
+
+## 8. Ownership Rule
+
+The Encounter bounded context and aggregate that own the relevant state own the semantic meaning of the event. Jano Core Event Infrastructure does not become the owner of Encounter event meaning.
+
+## 9. Event Categories
+
+Conceptual Encounter event categories follow the approved lifecycle and business meaning, such as establishment, lifecycle transition, triage result change where appropriate, completion, closure, correction, and amendment.
+
+Event naming must express a fact that occurred, not a future intention or workflow request.
+
+## 10. Event vs Other Messages
+
+```text
+Domain Event ≠ Workflow Notification
+Domain Event ≠ Synchronization Record
+Domain Event ≠ Integration Message
+Domain Event ≠ Audit Record
+```
+
+## 11. Consumers
+
+Consumers may include other clinical domains, AI assistance, analytics, interoperability, synchronization infrastructure, or accountability systems where explicitly governed. Consumption does not transfer ownership.
+
+## 12. Ordering
+
+Aggregate causal order, global arrival order, and clinical occurrence order are distinct.
+
+## 13. Offline
+
+Domain events produced locally remain semantically owned by the producing domain. Propagation status does not mutate the event's business meaning.
+
+## 14. Correction
+
+Correction and amendment can generate additional events that preserve historical lineage rather than mutating an old event into a different business fact.
+
+## 15. Canonical Status
+
+**Approved Architectural Baseline — v0.1.1**

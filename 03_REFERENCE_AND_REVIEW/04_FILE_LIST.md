@@ -1,4 +1,6 @@
-# Complete File List — Updated
+# FILE LIST — CURRENT PACKAGE
+
+**194 Markdown documents + 1 package file list = 195 archive entries**
 
 - `00_CONTROL/ARCHITECTURE_VIEW_CATALOG.md`
 - `00_CONTROL/CURRENT_ARCHITECTURAL_DECISIONS_MASTER.md`
@@ -194,9 +196,4 @@
 - `20_STARTUP_AND_EXTERNAL_REFERENCE/PRODUCT_ONE_PAGER_REFERENCE.md`
 - `99_LEGACY_NOT_CANONICAL/HISTORICAL_MISSING_ARTIFACT_REGISTER.md`
 - `99_LEGACY_NOT_CANONICAL/README.md`
-
-**Markdown documents:** 194
-
-**Package file list:** `PACK_FILE_LIST.txt`
-
-**Archive entries:** 195
+- `PACK_FILE_LIST.txt`

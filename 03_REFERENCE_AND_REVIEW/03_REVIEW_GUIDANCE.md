@@ -1,3 +1,7 @@
+# Review Guidance — Canonical Authority
+
+The 20 files under `01_CANONICAL_BASELINE/` are the authoritative approved architecture. Draft documents must be reviewed against them and may not silently override them.
+
 # Review Guidance — Updated
 
 ## For every document
